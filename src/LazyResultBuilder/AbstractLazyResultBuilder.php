@@ -3,6 +3,11 @@ declare(strict_types=1);
 
 namespace VolodymyrKlymniuk\LazyResultLib\LazyResultBuilder;
 
+use VolodymyrKlymniuk\LazyResultLib\AbstractLazyResult;
+use VolodymyrKlymniuk\LazyResultLib\Dto\FilterableInterface;
+use VolodymyrKlymniuk\LazyResultLib\Dto\PaginatableInterface;
+use VolodymyrKlymniuk\LazyResultLib\Dto\SortableInterface;
+
 abstract class AbstractLazyResultBuilder implements LazyResultBuilderInterface
 {
     /**
@@ -15,7 +20,7 @@ abstract class AbstractLazyResultBuilder implements LazyResultBuilderInterface
      *
      * @return AbstractLazyResult
      */
-    public function build($dto)
+    public function build(object $dto)
     {
         if ($dto instanceof FilterableInterface) {
             $this->filter($dto);
@@ -30,9 +35,6 @@ abstract class AbstractLazyResultBuilder implements LazyResultBuilderInterface
         return $this->getResult();
     }
 
-    /**
-     * @return AbstractLazyResult
-     */
     public function getResult(): AbstractLazyResult
     {
         return $this->lazyResult;

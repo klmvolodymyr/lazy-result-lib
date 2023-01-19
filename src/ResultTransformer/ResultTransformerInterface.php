@@ -7,10 +7,5 @@ use Doctrine\Common\Collections\Collection;
 
 interface ResultTransformerInterface
 {
-    /**
-     * @param iterable $response
-     *
-     * @return Collection
-     */
     public function transform(iterable $response): Collection;
 }

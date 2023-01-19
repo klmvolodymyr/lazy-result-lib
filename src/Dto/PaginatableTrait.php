@@ -6,21 +6,14 @@ trait PaginatableTrait
 {
     /**
      * @api(type="integer")
-     *
-     * @var int
      */
-    protected $offset = 0;
+    protected int $offset = 0;
 
     /**
      * @api(type="integer")
-     *
-     * @var int
      */
-    protected $limit = PaginatableInterface::DEFAULT_LIMIT;
+    protected int $limit = PaginatableInterface::DEFAULT_LIMIT;
 
-    /**
-     * @return int
-     */
     public function getOffset(): int
     {
         return $this->offset;
@@ -38,19 +31,11 @@ trait PaginatableTrait
         return $this;
     }
 
-    /**
-     * @return int
-     */
     public function getLimit(): int
     {
         return $this->limit;
     }
 
-    /**
-     * @param int $limit
-     *
-     * @return self
-     */
     public function setLimit(int $limit): PaginatableTrait
     {
         $this->limit = $limit;

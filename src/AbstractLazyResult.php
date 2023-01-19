@@ -52,12 +52,8 @@ abstract class AbstractLazyResult extends AbstractLazyCollection
         $this->collection = $this->transformResponseToCollection();
     }
 
-
     abstract protected function getResponse();
 
-    /**
-     * @return Collection
-     */
     protected function transformResponseToCollection(): Collection
     {
         return $this->resultTransformer->transform($this->response);
