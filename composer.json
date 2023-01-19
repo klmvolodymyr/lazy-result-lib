@@ -2,7 +2,7 @@
     "name": "volodymyr-klymniuk/lazy-result-lib",
     "description": "PHP Library internal wrapper",
     "type": "library",
-    "license": "MIT",
+    "license": "SPDX",
     "autoload": {
         "psr-4": {
             "VolodymyrKlymniuk\\LazyResultLib\\": "src/"
